@@ -26,6 +26,7 @@
         default = pkgs.mkShell {
           packages = with pkgs; [
             bun
+            docker
             git
             gradle
             jdk22

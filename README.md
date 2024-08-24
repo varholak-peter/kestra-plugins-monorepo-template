@@ -16,3 +16,24 @@ Afterwards, you should be able to run `nix develop` to start your local environm
 > 
 > Subsequent runs will complete much faster.
 
+### Recommended information
+
+- [Kestra - Build a Custom Plugin](https://kestra.io/docs/developer-guide/plugins)
+
+## Generators
+
+To create a new plugin run `bunx nx g kestra:plugin`.
+
+## Building
+
+You can build all plugins by running `gradle build`.
+
+Alternatively you can run `gradle :plugins:plugin_name:build` to build individual plugins.
+
+## Publish
+
+The plugins here are published by bundling them into a [custom Kestra docker image](https://kestra.io/docs/developer-guide/plugins#use-a-custom-docker-image-with-your-plugin).
+
+You can build the custom image by running `docker build -t kestra-custom .` (You can replace "kestra-custom" with your own name)
+
+Then run your custom Kestra image by following [Kestra Docker installation guide](https://kestra.io/docs/installation/docker).

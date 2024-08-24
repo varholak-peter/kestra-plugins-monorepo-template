@@ -1,0 +1,2 @@
+FROM kestra/kestra:develop
+

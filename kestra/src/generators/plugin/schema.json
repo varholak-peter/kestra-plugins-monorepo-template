@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "$id": "Plugin",
+  "title": "",
+  "type": "object",
+  "properties": {
+    "namespace": {
+      "type": "string",
+      "description": "Namespace of the plugin. (Such as 'io.kestra.plugin')",
+      "x-prompt": "What is the namespace for your plugin?"
+    },
+    "name": {
+      "type": "string",
+      "description": "Plugin name",
+      "x-prompt": "What is the name of your plugin?"
+    },
+    "description": {
+      "type": "string",
+      "description": "Plugin description",
+      "x-prompt": "Describe your plugin"
+    }
+  },
+  "required": ["namespace", "name", "description"]
+}

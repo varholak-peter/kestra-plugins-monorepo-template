@@ -1,0 +1,51 @@
+{
+  "name": "kestra",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "kestra/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/kestra",
+        "main": "kestra/src/index.ts",
+        "tsConfig": "kestra/tsconfig.lib.json",
+        "assets": [
+          "kestra/*.md",
+          {
+            "input": "./kestra/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./kestra/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./kestra",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./kestra",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "kestra/jest.config.ts"
+      }
+    }
+  }
+}
