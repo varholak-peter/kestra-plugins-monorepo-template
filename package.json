@@ -1,0 +1,14 @@
+{
+  "name": "kestra-plugins-monorepo",
+  "version": "0.0.1",
+  "scripts": {},
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "@nx/plugin": "19.6.2",
+    "nx": "19.6.2"
+  },
+  "workspaces": [
+    "plugins/*"
+  ]
+}
